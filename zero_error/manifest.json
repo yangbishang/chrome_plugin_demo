@@ -1,0 +1,21 @@
+{
+    
+    "manifest_version": 2,
+    "name": "zero_error",
+    "description": "24只羊羊羊",
+    "version": "1.0.1",
+    // 图标
+    "icons": {
+        "16": "img/search.png",
+        "48": "img/search.png",
+        "128": "img/search.png"
+    },
+   
+    "browser_action": {
+        "default_icon":"img/search.png",    // 浏览器右上角图片
+        "default_popup":"html/popup.html",   // 弹窗
+        "default_title": "这是24只羊羊羊的插件"  
+    },
+
+    "permissions": ["contextMenus"]
+}
