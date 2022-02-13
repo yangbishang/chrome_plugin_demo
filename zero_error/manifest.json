@@ -1,9 +1,11 @@
+/* 这是一个Chrome插件最重要也是必不可少的文件，用来配置所有和插件相关的配置，必须放在根目录 */
 {
     
-    "manifest_version": 2,
-    "name": "zero_error",
-    "description": "24只羊羊羊",
-    "version": "1.0.1",
+    
+    "manifest_version": 2,         // 清单文件的版本，这个必须写，且为2
+    "name": "zero_error",          // 插件名字
+    "version": "1.0.1",            // 插件版本
+    "description": "24只羊羊羊",    // 插件描述
     // 图标
     "icons": {
         "16": "img/search.png",
@@ -11,10 +13,26 @@
         "128": "img/search.png"
     },
    
+    // 浏览器右上角图标设置，browser_action、page_action、app 必须三选1
     "browser_action": {
-        "default_icon":"img/search.png",    // 浏览器右上角图片
-        "default_popup":"html/popup.html",   // 弹窗
-        "default_title": "这是24只羊羊羊的插件"  
+        "default_icon": "img/search.png",       // 浏览器右上角图片
+        "default_title": "这是24只羊羊羊的插件",  // 图标悬停时的标题
+        "default_popup": "html/popup.html"      // 点击右上角展示的弹窗页面地址
+
+    },
+
+    // 某些页面打开时才显示的图标
+    // "page_action" : {
+    //     "default_icon": "img/search.png",
+    //     "default_title": "我是pageAction",
+    //     "default_popup": "popup.html"
+    // },
+
+    // 会一直常驻在后台JS或后台页面
+    "background" : {
+        // 两种指定方式，page, scripts
+        "page": "html/background.html",
+        "script": ["js/background.js"]
     },
 
     "permissions": ["contextMenus"]
